@@ -64,7 +64,7 @@ h2 {
 }
 
 #main {
-	background: #fff;
+	background: #1474ad url("../img/intro-icons.png") repeat 0 0;
 }
 
 #people {
@@ -75,6 +75,7 @@ h2 {
 #content {
 	float: left;
 	width: 75%;
+	background: #fff;
 }
 
 .entry {
@@ -129,7 +130,6 @@ h2 {
 }
 
 .kp-profile {
-	background: #1474ad url("../img/intro-icons.png") repeat 0 0;
 	padding: 1em;
 	color: #eee;
 }
