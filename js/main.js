@@ -55,7 +55,13 @@ jQuery(document).ready(function($) {
 				var docs = result.data;
 
 				docs.forEach(function (doc) {
-					var li = $('<li><h2 class="title">'+doc.title+'</h2><p class="entry">'+decodeURI(doc.content)+'</p></li>');
+					try{
+						doc.content = decodeURI(doc.content);
+					}catch(e){
+						console.log(e);
+					}
+
+					var li = $('<li><h2 class="title">'+doc.title+'</h2><p class="entry">'+doc.content+'</p></li>');
 					$('ul.kp-news.line-content').append(li);
 				});
 
@@ -79,6 +85,23 @@ jQuery(document).ready(function($) {
 		videos.data.map(function (video) {
 			KP.api('/videos/' + video.id).done(function (result) {
 				video.data = result.data;
+
+				var docs = result.data;
+
+				docs.forEach(function (doc) {
+					try{
+						doc.description = decodeURI(doc.description);
+					}catch(e){
+						console.log(e);
+					}
+
+					var li;
+
+					li = $('<li><h2 class="title">'+doc.title+'</h2></li>');
+					li.append('<div class="video-wrap clear"><a href="'+doc.link+'" target="_blank"><img src="'+doc.thumbnails.high.url+'" border="0" /></a><div class="des">'+doc.description+'</div></div>');
+
+					$('ul.kp-video.line-content').append(li);
+				});
 			});
 		});
 	}
