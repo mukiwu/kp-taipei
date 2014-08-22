@@ -29,21 +29,23 @@ jQuery(document).ready(function($) {
 
 	KP.api('/category/')
 		.done(loadCategory)
-		.done(function (result) {
-			KP.data.category = result.data;
-		});
+		.done(appendTo('category'));
 
 	KP.api('/albums/')
 		.done(loadAlbums)
-		.done(function (result) {
-			KP.data.albums = result.data;
-		});
+		.done(appendTo('albums'));
 
 	KP.api('/videos/')
 		.done(loadVideos)
-		.done(function (result) {
-			KP.data.videos = result.data;
-		});
+		.done(appendTo('videos'));
+
+
+	function appendTo(resource) {
+		return function (result) {
+			KP.data[resource] = result.data;
+			return result;
+		}
+	}
 
 	function loadCategory(categories) {
 		categories.data.map(function (category) {
