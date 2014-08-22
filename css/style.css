@@ -13,7 +13,7 @@
  }
 
  a {
-	color: #52bbbb;
+	color: #3382b5;
 	transition: all .3s ease-in-out;
  }
 
@@ -45,9 +45,8 @@
  }
 
  h2 {
-	font-size: 1.8em;
-	line-height: 1.8em;
-	color: #186fa7;
+ 	font-size: 1.5em;
+ 	line-height: 1.5em;
  }
 
 /* 
@@ -173,33 +172,46 @@
 	color: #ccc;
  }
 
- .kp-history h2 {
-	color: #fff;
-	font-size: 1.2em;
-	text-align: center;
- }
-
- .kp-news .title {
+ .line-content .title {
 	color: #3382b5;
  }
 
- .kp-news .title:before {
+ .line-content .title:before {
 	content: "✧";
 	display: inline-block;
-	margin-right: .5em;
+	margin-right: .2em;
  }
 
- .kp-news .entry {
+ .line-content .entry {
 	border-left: 2px solid #aaa;
-	margin-left: 5px;
+	margin-left: 8px;
 	padding-left: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
  }
 
- .album {
-	margin: .5em 1em;
-	width: 19%;
+.kp-album .entry a {
+	width: 220px;
+	height: 145px;
 	display: inline-block;
+	overflow: hidden;
+}
+
+.kp-album .entry img {
+	width: 100%;
+	opacity: .7;
+	transition: all 0.2s ease-out;
+}
+
+.kp-album .entry a:hover img {
+ 	opacity: 1;
+	transform: scale(1.2, 1.2);
+}
+
+ /*.album {
+	margin: .5em 1em;
+	width: 45%;
+	display: inline-block;
+	overflow: hidden;
  }
 
  .album-img {
@@ -211,16 +223,35 @@
 
  .album-img img {
 	width: 100%;
+	opacity: .7;
 	transition: all 0.2s ease-out;
  }
 
  .album-img:hover img {
+ 	opacity: 1;
 	transform: scale(1.2, 1.2);
  }
 
  .album .title {
 	text-align: center;
-	font-size: .8em;
+	background: #333;
+	opacity: .5;
+	padding: .5em 0;
+	margin-top: -3em;
+	transition: all 0.2s ease-out;
+ }
+
+ .album .title a {
+ 	color: #eee;
+ }
+
+ .album-img:hover + .title {
+ 	opacity: 1;
+	transform: scale(1.2, 1.2);
+ }*/
+
+ .kp-video .title {
+ 	font-size: 1em;
  }
 
  .search-bar span {
