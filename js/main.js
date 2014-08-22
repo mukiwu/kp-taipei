@@ -26,6 +26,7 @@ var KP = (function initKP(window, $) {
  */
 jQuery(document).ready(function($) {
 
+	// $('ul.kp-news.line-content').()
 
 	KP.api('/category/')
 		.done(loadCategory)
@@ -51,6 +52,15 @@ jQuery(document).ready(function($) {
 		categories.data.map(function (category) {
 			KP.api('/category/' + category.id).done(function (result) {
 				category.data = result.data;
+				var docs = result.data;
+
+				docs.forEach(function (doc) {
+					var li = $('<li><h2 class="title">'+doc.title+'</h2><p class="entry">'+decodeURI(doc.content)+'</p></li>');
+					$('ul.kp-news.line-content').append(li);
+				});
+
+
+				console.log('docs', docs);
 			});
 		});
 	}
