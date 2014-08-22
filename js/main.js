@@ -21,8 +21,6 @@ var KP = (function initKP(window, $) {
 })(window, jQuery);
 
 
-
-
 /*
  * Main
  */
@@ -72,4 +70,19 @@ jQuery(document).ready(function($) {
 			});
 		});
 	}
+
+	// tab
+	$(".tab span:first").addClass("current");
+	$(".tab ul:not(:first)").hide();
+
+	$(".tab span").on("mouseover", function(){
+		$(".tab span").removeClass("current");
+		$(this).addClass("current");
+
+		$(".tab ul").hide();
+		$("." + $(this).attr("id")).fadeIn("slow");
+
+	})
+	// msearch
+	$('input.search').msearch('.line-content li', 'data-info');
 });
