@@ -76,6 +76,18 @@ jQuery(document).ready(function($) {
 		albums.data.map(function (album) {
 			KP.api('/albums/' + album.id).done(function (result) {
 				album.data = result.data;
+
+				var docs = result.data;
+
+				var li = $('<li><h2 class="title">'+album.title+'</h2></li>');
+				var entry = $('<div class="entry"></div>');
+
+				docs.photos.slice(0, 3).forEach(function (image) {
+					entry.append('<a href="'+image.link+'"><img src="'+image.images.small+'" border="0" /></a>');
+				});
+
+				entry.appendTo(li);
+				li.appendTo('ul.kp-album.line-content');
 			});
 		});
 	}
