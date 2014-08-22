@@ -76,6 +76,7 @@ h2 {
 	float: left;
 	width: 75%;
 	background: #fff;
+	min-height: 640px;
 }
 
 .entry {
