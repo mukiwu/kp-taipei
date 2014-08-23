@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 						console.log(e);
 					}
 
-					var li = $('<li><h2 class="title">'+doc.title+'</h2><p class="entry">'+doc.content+'</p></li>');
+					var li = $('<li data-info="'+doc.title+'"><h2 class="title">'+doc.title+'</h2><div class="entry">'+doc.content+'</div></li>');
 					$('ul.kp-news.line-content').append(li);
 				});
 
@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
 
 				var docs = result.data;
 
-				var li = $('<li><h2 class="title">'+album.title+'</h2></li>');
+				var li = $('<li data-info="'+album.title+'"><h2 class="title">'+album.title+'</h2></li>');
 				var entry = $('<div class="entry"></div>');
 
 				docs.photos.slice(0, 3).forEach(function (image) {
@@ -109,7 +109,7 @@ jQuery(document).ready(function($) {
 
 					var li;
 
-					li = $('<li><h2 class="title">'+doc.title+'</h2></li>');
+					li = $('<li data-info="'+doc.title+'"><h2 class="title">'+doc.title+'</h2></li>');
 					li.append('<div class="video-wrap clear"><a href="'+doc.link+'" target="_blank"><img src="'+doc.thumbnails.high.url+'" border="0" /></a><div class="des">'+doc.description+'</div></div>');
 
 					$('ul.kp-video.line-content').append(li);
