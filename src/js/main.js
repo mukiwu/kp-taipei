@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 						console.log(e);
 					}
 
-					var li = $('<li><h2 class="title">'+doc.title+'</h2><p class="entry">'+doc.content+'</p></li>');
+					var li = $('<li><h2 class="title">'+doc.title+'</h2><div class="entry">'+doc.content+'</div></li>');
 					$('ul.kp-news.line-content').append(li);
 				});
 
