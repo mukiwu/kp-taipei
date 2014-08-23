@@ -194,6 +194,7 @@ h2 {
 	height: 145px;
 	display: inline-block;
 	overflow: hidden;
+	margin-right: 10px;
 }
 
 .kp-album .entry img {
