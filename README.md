@@ -1,5 +1,5 @@
-kp-chat
+kp-taipei
 =======
 
 demo
-http://mukiwu.github.io/kp-chat/index.html
+http://mukiwu.github.io/kp-taipei/index.html
