@@ -1,9 +1,9 @@
 
 var KP = (function initKP(window, $) {
 
-	var API_KEY = 'kp5401df52457e64.36396858';
+	var API_KEY = 'kp53f72150650718.60278147';
 
-	var API_URL = 'http://api.kptaipei.tw/v1/';
+	var API_URL = 'http://api.kptaipei.tw/v1';
 
 	var api = function api(path, options) {
 
