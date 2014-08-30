@@ -172,6 +172,10 @@ h2 {
 	color: #ccc;
 }
 
+.kp-news img {
+	max-width: 100%;
+}
+
 .line-content .title {
 	color: #3382b5;
 }
