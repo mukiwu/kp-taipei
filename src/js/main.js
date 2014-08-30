@@ -1,7 +1,7 @@
 
 var KP = (function initKP(window, $) {
 
-	var API_KEY = '';
+	var API_KEY = 'kp5401df52457e64.36396858';
 
 	var API_URL = 'http://api.kptaipei.tw/v1/';
 
@@ -132,4 +132,6 @@ jQuery(document).ready(function($) {
 	})
 	// msearch
 	$('input.search').msearch('.line-content li', 'data-info');
+
+	$(".kp-news").find("img").removeAttr("width").removeAttr("height")
 });
