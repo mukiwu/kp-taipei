@@ -11,7 +11,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
   </head>
   <body ng-app="kpTaipeiApp">
@@ -21,20 +22,39 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">kpTaipei</h3>
+      <div id="header" class="clear">
+        <div class="wrap">
+          <h1 class="logo">柯文哲</h1>
+          <nav class="menu">
+            <ul>
+              <li><a href="http://kptaipei.tw/" target="_blank">官方網站</a></li>
+              <li><a href="http://unlimited.kptaipei.tw/" target="_blank">野生官網</a></li>
+              <li><a href="#notice">關於這裡</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
+
 
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+
+      <div id="footer" class="wrap">
+        Made by MUKI x Dca
       </div>
+
+      <div class="lightbox-target" id="notice">
+        <div class="content">
+          <h2>關於這裡</h2>
+          <ul>
+            <li>此網站純為參加柯文哲野生官網活動而製作。</li>
+            <li>網站圖片以及相關資訊，皆取自柯文哲官方網站，以及維基百科。</li>
+            <li>有任何問題請洽：<a href="http://muki.tw" target="_blank">http://muki.tw</a></li>
+          </ul>
+          <a class="lightbox-close" href="#"></a>
+        </div>
+      </div>
+
     </div>
 
 
