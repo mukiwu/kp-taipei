@@ -17,28 +17,28 @@
       <div class="entry">
         <div class="search-bar clear">
           <span>輸入關鍵字搜尋：</span>
-          <input class="search" type="text" ng-model="search" />
+          <input class="search" type="text" ng-model="searchText" />
         </div>
         <div class="tab">
           <div class="tab-border">
-            <span id="kp-news">
+            <span id="kp-news" ng-click="cureentDisplay = 'categories' ">
               文章
             </span>
-            <span id="kp-album">
+            <span id="kp-album" ng-click="cureentDisplay = 'albums' ">
               相簿
             </span>
-            <span id="kp-video">
+            <span id="kp-video" ng-click="cureentDisplay = 'videos' ">
               影片
             </span>
           </div>
-          <ul class="kp-news line-content">
-            <li class="" ng-repeat="category in categories | filter:search" data-info={{category.title}}>
+          <ul class="kp-news line-content" ng-show="cureentDisplay==='categories'">
+            <li class="" ng-repeat="category in categories | filter:searchText" data-info={{category.title}}>
               <h2 class="title">{{category.title}}</h2>
               <div class="entry">{{category.plain_content}}</div>
             </li>
           </ul>
-          <ul class="kp-album line-content">
-            <li ng-repeat="album in albums |filter:search" data-info={{album.title}}>
+          <ul class="kp-album line-content" ng-show="cureentDisplay==='albums'">
+            <li ng-repeat="album in albums |filter:searchText" data-info={{album.title}}>
               <h2 class="title">{{album.set.title}}</h2>
               <div class="entry">
                 <a ng-repeat="photo in album.photos | limitTo:3" ng-href={{photo.link}}>
@@ -47,8 +47,8 @@
                 </a>
             </li>
           </ul>
-          <ul class="kp-video line-content">
-            <li ng-repeat="video in videos |filter:search" data-info={{video.title}}>
+          <ul class="kp-video line-content" ng-show="cureentDisplay==='videos'">
+            <li ng-repeat="video in videos |filter:searchText" data-info={{video.title}}>
               <h2 class="title">{{video.title}}</h2>
               <div class="video-wrap clear">
                 <a ng-href={{video.link}} target="_blank">

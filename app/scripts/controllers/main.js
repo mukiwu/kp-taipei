@@ -16,6 +16,9 @@ angular.module('kpTaipeiApp')
       'Karma'
     ];
 
+    $scope.searchText = '';
+    $scope.cureentDisplay = 'categories';
+
     $scope.categories = [];
     $scope.albums = [];
     $scope.videos = [];
