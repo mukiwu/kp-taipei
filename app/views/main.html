@@ -32,6 +32,10 @@
             </span>
           </div>
           <ul class="kp-news line-content">
+            <li class="" ng-repeat="category in category[0].data" data-info={{category.title}}>
+              <h2 class="title">{{category.title}}</h2>
+              <div class="entry">{{category.plain_content}}</div>
+            </li>
           </ul>
           <ul class="kp-album line-content">
           </ul>
