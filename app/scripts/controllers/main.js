@@ -16,18 +16,40 @@ angular.module('kpTaipeiApp')
       'Karma'
     ];
 
-    $scope.category = [];
+    $scope.categories = [];
+    $scope.albums = [];
+    $scope.videos = [];
 
     kpService.getCategory('').success(function (results) {
-    	$scope.category = results.data;
 
-      angular.forEach($scope.category, function (category) {
+      angular.forEach(results.data, function (category) {
         kpService.getCategory(category.id).success(function (result) {
-          category.data = result.data;
+          $scope.categories= $scope.categories.concat(result.data);
         });
       });
 
     });
 
+
+    kpService.getAlbums('').success(function (results) {
+
+      angular.forEach(results.data, function (albums) {
+        kpService.getAlbums(albums.id).success(function (result) {
+          $scope.albums= $scope.albums.concat(result.data);
+        });
+      });
+
+    });
+
+
+    kpService.getVideos('').success(function (results) {
+
+      angular.forEach(results.data, function (videos) {
+        kpService.getVideos(videos.id).success(function (result) {
+          $scope.videos= $scope.videos.concat(result.data);
+        });
+      });
+
+    });
 
   });

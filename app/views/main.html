@@ -32,14 +32,33 @@
             </span>
           </div>
           <ul class="kp-news line-content">
-            <li class="" ng-repeat="category in category[0].data" data-info={{category.title}}>
+            <li class="" ng-repeat="category in categories" data-info={{category.title}}>
               <h2 class="title">{{category.title}}</h2>
               <div class="entry">{{category.plain_content}}</div>
             </li>
           </ul>
           <ul class="kp-album line-content">
+            <li ng-repeat="album in albums" data-info={{album.title}}>
+              <h2 class="title">{{album.set.title}}</h2>
+              <div class="entry">
+                <a ng-repeat="photo in album.photos | limitTo:3" ng-href={{photo.link}}>
+                  <!-- <img ng-src={{photo.images.small}} border="0"> -->
+                  <img ng-src="http://placehold.it/220x146" border="0">
+                </a>
+            </li>
           </ul>
           <ul class="kp-video line-content">
+            <li ng-repeat="video in videos" data-info={{video.title}}>
+              <h2 class="title">{{video.title}}</h2>
+              <div class="video-wrap clear">
+                <a ng-href={{video.link}} target="_blank">
+                  <img ng-src={{video.thumbnails.high.url}} border="0">
+                </a>
+                <div class="des">
+                  {{video.description}}
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
